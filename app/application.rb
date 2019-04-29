@@ -25,7 +25,7 @@ class Application
       
     elsif req.path.match(/add/)
       new_item = req.params["item"]
-      if !@@cart.include?(new_item)
+      if !@@items.include?(new_item)
         @@cart << new_item
       else
         resp.write "Cart already contains item"
