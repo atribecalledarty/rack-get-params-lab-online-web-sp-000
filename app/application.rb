@@ -19,7 +19,12 @@ class Application
         resp.write "#{item}\n"
       end
     elsif req.path.match(/add/)
-      new_item = 
+      new_item = req.params["item"]
+      if !@@cart.include?(new_item)
+        @@cart << new_item
+      else
+        resp.write "Cart already contains item"
+      end
     else
       resp.write "Path Not Found"
     end
