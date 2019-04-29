@@ -28,7 +28,7 @@ class Application
       if !@@items.include?(new_item)
         @@cart << new_item
       else
-        resp.write "Cart already contains item"
+        resp.write "Item does not exist"
       end
     else
       resp.write "Path Not Found"
